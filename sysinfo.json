@@ -1,39 +1,63 @@
 {
-  "node": "v14.15.1",
+  "node": "v14.18.0",
   "system": {
     "manufacturer": "Apple Inc.",
-    "model": "MacBookPro11,3"
+    "model": "MacBookAir7,2"
   },
   "cpu": {
     "manufacturer": "Intel®",
-    "brand": "Core™ i7-4960HQ",
-    "speed": 2.6
+    "brand": "Core™ i5-5350U",
+    "speed": 1.8
   },
-  "memory": "16 GB",
+  "memory": "8 GB",
   "osInfo": {
     "platform": "darwin",
-    "distro": "macOS",
-    "release": "11.5.2"
+    "distro": "Mac OS X",
+    "release": "10.15.7"
   },
   "vscodeInfo": {
-    "version": "1.62.1",
+    "version": "1.63.2",
     "extensions": [
+      "aaron-bond.better-comments",
+      "bbenoist.shell",
+      "bierner.github-markdown-preview",
+      "bierner.markdown-checkbox",
+      "bierner.markdown-emoji",
+      "bierner.markdown-preview-github-styles",
+      "bierner.markdown-yaml-preamble",
+      "CoenraadS.bracket-pair-colorizer",
+      "DavidAnson.vscode-markdownlint",
+      "dbaeumer.jshint",
+      "dbaeumer.vscode-eslint",
+      "devzstudio.emoji-snippets",
+      "eamodio.gitlens",
       "esbenp.prettier-vscode",
+      "evgeniypeshkov.syntax-highlighter",
+      "firsttris.vscode-jest-runner",
+      "GitHub.vscode-pull-request-github",
+      "hdg.live-html-previewer",
+      "hnw.vscode-auto-open-markdown-preview",
+      "HookyQR.beautify",
+      "mngrm3a.shell-command",
+      "ms-azuretools.vscode-docker",
+      "ms-vscode.atom-keybindings",
+      "Orta.vscode-jest",
       "ritwickdey.LiveServer",
-      "shd101wyy.markdown-preview-enhanced"
+      "streetsidesoftware.code-spell-checker",
+      "techer.open-in-browser",
+      "vscodevim.vim",
+      "WallabyJs.quokka-vscode"
     ],
     "userSettings": {
-      "explorer.confirmDragAndDrop": false,
-      "explorer.confirmDelete": false,
-      "[javascript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-      },
-      "javascript.updateImportsOnFileMove.enabled": "never",
+      "security.workspace.trust.untrustedFiles": "open",
+      "liveServer.settings.CustomBrowser": "chrome",
       "editor.formatOnSave": true,
-      "editor.tabSize": 2,
-      "[javascriptreact]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-      }
+      "explorer.confirmDragAndDrop": false,
+      "atomKeymap.promptV3Features": true,
+      "window.zoomLevel": -1,
+      "workbench.colorTheme": "Monokai",
+      "bracketPairColorizer.depreciation-notice": false,
+      "liveServer.settings.donotShowInfoMsg": true
     }
   }
 }

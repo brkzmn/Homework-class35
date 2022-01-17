@@ -10,4 +10,15 @@ Full description at: https://github.com/HackYourFuture/Homework/tree/main/2-Brow
    `list-item`.
 ------------------------------------------------------------------------------*/
 
-// TODO add your JavaScript code here.
+document.body.style.fontFamily = "Arial, sans-serif";
+
+const nickname = document.getElementById("nickname");
+nickname.textContent = "Burak" ;
+const favFood = document.getElementById("fav-food");
+favFood.textContent = "Stroopwafel";
+const homeTown = document.getElementById("hometown");
+homeTown.textContent = "Ankara";
+
+const listEls = Array.from(document.getElementsByTagName("li"));
+listEls.forEach(list => list.classList.add("list-item"));
+
