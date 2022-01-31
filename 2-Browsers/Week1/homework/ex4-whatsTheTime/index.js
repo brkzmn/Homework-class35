@@ -9,15 +9,12 @@ Full description at: https://github.com/HackYourFuture/Homework/tree/main/2-Brow
 ------------------------------------------------------------------------------*/
 const watch = document.createElement("div");
 function addCurrentTime() {
-  
-  watch.style.border = "3px solid green";
-  watch.style.display = "inline-block";
-  watch.style.padding = "10px";
-  watch.style.margin = "20px";
-  watch.style.fontSize = "40px";
+  watch.classList.add("time-frame");
   const currentTime = new Date().toLocaleTimeString('en-US', { hour12: false }); 
   watch.textContent = currentTime;
   document.body.appendChild(watch);
+  console.log(currentTime);
+
 }
 
 window.addEventListener("DOMContentLoaded", () => {
