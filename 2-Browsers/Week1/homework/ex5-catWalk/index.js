@@ -23,22 +23,22 @@ Full description at: https://github.com/HackYourFuture/Homework/tree/main/2-Brow
 -----------------------------------------------------------------------------*/
 const imgEl = document.querySelector("img");
 imgEl.style.left = "0px";
+
+let isDancing;
+
 function catWalk() {
+   const midScreen = (window.innerWidth) / 2;
    const leftHand = parseFloat(imgEl.style.left);
    const newLeft = leftHand + 10;
-   const midScreen = (window.innerWidth) / 2;
-
-   if (leftHand < midScreen) {
-    imgEl.style.left = newLeft + "px";
-   } else if (leftHand >= (midScreen - 5)  && leftHand <= (midScreen + 5) ) {
-    imgEl.src = "https://media1.tenor.com/images/2de63e950fb254920054f9bd081e8157/tenor.gif";
-    imgEl.style.left = leftHand + 10 + "px";
-    setTimeout(()=> {
-      imgEl.style.left = leftHand + 20 + "px"; 
-      imgEl.src = "http://www.anniemation.com/clip_art/images/cat-walk.gif";
-    }, 5000);
-   } else if (leftHand > (midScreen + 15)) {
-    imgEl.style.left = newLeft + "px";
+   imgEl.style.left = `${newLeft}px`;
+   if (leftHand >= (midScreen - 10)  && leftHand <= (midScreen + 10) ) {
+      clearInterval(isDancing);
+      imgEl.src = "https://media1.tenor.com/images/2de63e950fb254920054f9bd081e8157/tenor.gif";
+      setTimeout(() => {
+         imgEl.style.left = `${(newLeft + 25)}px`; 
+         imgEl.src = "http://www.anniemation.com/clip_art/images/cat-walk.gif";
+         isDancing = setInterval(catWalk, 50);
+      }, 5000);
    }
    if(newLeft >= window.innerWidth - imgEl.width) {
       imgEl.style.left = "0px"
@@ -46,6 +46,5 @@ function catWalk() {
 }
 
 window.addEventListener("load", () => {
-   setInterval(catWalk, 50);
+   isDancing = setInterval(catWalk, 50);
 });
-
