@@ -292,3 +292,23 @@ ex2-aboutMe/index.js:18:24 - Unknown word (Stroopwafel)
 2022-01-17 11:25:18 info: ------------------------------------------
 2022-01-17 11:25:20 info: All unit tests passed.
 2022-01-17 11:25:22 info: All steps were completed successfully
+2022-02-01 04:29:06 info: ------------------------------------------
+2022-02-01 04:29:06 info: >>> Running Unit Test `ex6-gameOfLife` <<<
+2022-02-01 04:29:06 info: ------------------------------------------
+2022-02-01 04:29:10 info: All unit tests passed.
+2022-02-01 04:29:14 info: All steps were completed successfully
+2022-02-01 04:29:40 info: ----------------------------------------
+2022-02-01 04:29:40 info: >>> Running Unit Test `ex1-bookList` <<<
+2022-02-01 04:29:40 info: ----------------------------------------
+2022-02-01 04:29:47 info: All unit tests passed.
+2022-02-01 04:29:51 info: All steps were completed successfully
+2022-02-01 04:30:33 info: --------------------------------------------
+2022-02-01 04:30:33 info: >>> Running Unit Test `ex4-whatsTheTime` <<<
+2022-02-01 04:30:33 info: --------------------------------------------
+2022-02-01 04:30:43 info: All unit tests passed.
+2022-02-01 04:30:47 info: All steps were completed successfully
+2022-02-01 04:31:06 info: ---------------------------------------
+2022-02-01 04:31:06 info: >>> Running Unit Test `ex5-catWalk` <<<
+2022-02-01 04:31:06 info: ---------------------------------------
+2022-02-01 04:31:14 info: All unit tests passed.
+2022-02-01 04:31:17 info: All steps were completed successfully
