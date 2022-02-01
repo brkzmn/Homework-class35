@@ -27,7 +27,7 @@ imgEl.style.left = "0px";
 let isDancing;
 
 function catWalk() {
-   const midScreen = (window.innerWidth) / 2;
+   const midScreen = (window.innerWidth - imgEl.width) / 2;
    const leftHand = parseFloat(imgEl.style.left);
    const newLeft = leftHand + 10;
    imgEl.style.left = `${newLeft}px`;
