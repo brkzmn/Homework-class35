@@ -19,42 +19,40 @@ https: //hyf-js2-week1-makeme-ex1-demo.herokuapp.com/
 
 function createBookList(books) {
   const myList = document.createElement("ul");
-  myList.style.display = "flex";
-  myList.style.listStyle = "none";
-  myList.style.padding = "10px";
+  myList.classList.add("book-list");
 
-  books.forEach(book => {
-    const newParagraph = document.createElement("p");
-    newParagraph.textContent = `${book.title} - ${book.author}`;
+  books.forEach((book) => {
+
     const newBook = document.createElement("li");
-    newBook.style.marginRight = "20px";
-    newBook.appendChild(newParagraph);
+    const bookInfo = document.createElement("p");
+    const bookImage = document.createElement("img");
+    bookImage.classList.add("book-image")
     myList.appendChild(newBook);
+    newBook.appendChild(bookInfo);
+    newBook.appendChild(bookImage);
+    bookInfo.textContent = `${book.title} - ${book.author}`;
+    newBook.classList.add('book-cover')
+
     if (book.alreadyRead === true) {
-      newBook.style.backgroundColor = "green";
+      newBook.classList.add("read");
     } else {
-      newBook.style.backgroundColor = "red"
+      newBook.classList.add("not-read");
     }
   });
-
-  const listItems = Array.from(myList.children);
-  listItems.forEach(listItem => listItem.style.padding = "20px");
-
-  const firstImage = document.createElement("img");
-  firstImage.src = "./assets/the_design_of_everyday_things.jpg"
-  firstImage.setAttribute("alt", "the design of everyday thins");
-  myList.children[0].appendChild(firstImage);
-  const secondImage = document.createElement("img");
-  secondImage.src = "./assets/the_most_human_human.jpg"
-  secondImage.setAttribute("alt", "the most human human");
-  myList.children[1].appendChild(secondImage);
-  const thirdImage = document.createElement("img");
-  thirdImage.src = "./assets/the_pragmatic_programmer.jpg"
-  thirdImage.setAttribute("alt", "the pragmatic programmer");
-  myList.children[2].appendChild(thirdImage);
+  function addImageAttribute () {
+    const bookImages = document.getElementsByTagName("img");
+    bookImages[0].src = "./assets/the_design_of_everyday_things.jpg";
+    bookImages[0].setAttribute("alt", "the design of everyday thins");
+    bookImages[1].src = "./assets/the_most_human_human.jpg";
+    bookImages[1].setAttribute("alt", "the most human human");
+    bookImages[2].src = "./assets/the_pragmatic_programmer.jpg"
+    bookImages[2].setAttribute("alt", "the pragmatic programmer");
+  }
+  setTimeout(addImageAttribute, 0);
 
   return myList;
 }
+
 
 function main() {
   const myBooks = [
