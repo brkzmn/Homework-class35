@@ -67,3 +67,8 @@ ex1-johnWho.js
 2022-02-04 11:47:17 info: ---------------------------------------
 2022-02-04 11:47:19 info: All unit tests passed.
 2022-02-04 11:47:20 info: All steps were completed successfully
+2022-02-04 12:47:33 info: -------------------------------------------------
+2022-02-04 12:47:33 info: >>> Running Unit Test `ex2-checkDoubleDigits` <<<
+2022-02-04 12:47:33 info: -------------------------------------------------
+2022-02-04 12:47:37 info: All unit tests passed.
+2022-02-04 12:47:40 info: All steps were completed successfully
