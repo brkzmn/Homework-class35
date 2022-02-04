@@ -159,3 +159,8 @@ Ran all test suites matching /ex3-rollDie.test.js/i.
 2022-02-04 03:01:10 info: ---------------------------------------
 2022-02-04 03:01:12 info: All unit tests passed.
 2022-02-04 03:01:14 info: All steps were completed successfully
+2022-02-04 03:55:01 info: ---------------------------------------
+2022-02-04 03:55:01 info: >>> Running Unit Test `ex3-rollDie` <<<
+2022-02-04 03:55:01 info: ---------------------------------------
+2022-02-04 03:55:05 info: All unit tests passed.
+2022-02-04 03:55:08 info: All steps were completed successfully

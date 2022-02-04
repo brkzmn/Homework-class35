@@ -50,6 +50,9 @@ function main() {
   .catch((error) => console.log(error.message));
 }
 
+//Thanks to Promise, now only either the resolve value or the reject value is obtained. Both could work on callbacks.
+
+
 // ! Do not change or remove the code below
 if (process.env.NODE_ENV !== 'test') {
   main();
