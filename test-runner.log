@@ -418,3 +418,13 @@ ex4-pokerDiceAll.js
 2022-02-05 11:12:21 info: --------------------------------------------
 2022-02-05 11:12:23 info: All unit tests passed.
 2022-02-05 11:12:25 info: All steps were completed successfully
+2022-02-05 11:38:53 info: ----------------------------------------------
+2022-02-05 11:38:53 info: >>> Running Unit Test `ex5-pokerDiceChain` <<<
+2022-02-05 11:38:53 info: ----------------------------------------------
+2022-02-05 11:38:57 info: All unit tests passed.
+2022-02-05 11:39:00 info: All steps were completed successfully
+2022-02-05 11:42:33 info: ----------------------------------------------
+2022-02-05 11:42:33 info: >>> Running Unit Test `ex5-pokerDiceChain` <<<
+2022-02-05 11:42:33 info: ----------------------------------------------
+2022-02-05 11:42:35 info: All unit tests passed.
+2022-02-05 11:42:36 info: All steps were completed successfully
