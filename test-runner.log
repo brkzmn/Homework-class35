@@ -164,3 +164,257 @@ Ran all test suites matching /ex3-rollDie.test.js/i.
 2022-02-04 03:55:01 info: ---------------------------------------
 2022-02-04 03:55:05 info: All unit tests passed.
 2022-02-04 03:55:08 info: All steps were completed successfully
+2022-02-04 04:38:57 info: --------------------------------------------
+2022-02-04 04:38:57 info: >>> Running Unit Test `ex4-pokerDiceAll` <<<
+2022-02-04 04:38:57 info: --------------------------------------------
+2022-02-04 04:39:01 error: *** Unit Test Error Report ***
+
+Command failed: npx jest ex4-pokerDiceAll.test.js --colors
+ FAIL  3-UsingAPIs/Week1/unit-tests/ex4-pokerDiceAll.test.js
+  ex4-pokerDiceAll
+    ✓ should exist and be executable (1 ms)
+    ✕ should have all TODO comments removed (2 ms)
+    ✓ `rollDice` should not contain unneeded console.log calls (1 ms)
+    ✓ should use `dice.map()` (1 ms)
+    ✓ should use `Promise.all()`
+    ✓ should resolve when all dice settle successfully (1 ms)
+    ✕ should reject with an Error when a die rolls off the table
+
+  ● ex4-pokerDiceAll › should have all TODO comments removed
+
+    expect(received).toBeFalsy()
+
+    Received: true
+
+      103 | function testTodosRemoved(getSource) {
+      104 |   test('should have all TODO comments removed', () => {
+    > 105 |     expect(/\bTODO\b/.test(getSource())).toBeFalsy();
+          |                                          ^
+      106 |   });
+      107 | }
+      108 |
+
+      at Object.<anonymous> (test-runner/unit-test-helpers.js:105:42)
+
+  ● ex4-pokerDiceAll › should reject with an Error when a die rolls off the table
+
+    expect.assertions(3)
+
+    Expected three assertions to be called but received two assertion calls.
+
+      63 |
+      64 |   test('should reject with an Error when a die rolls off the table', async () => {
+    > 65 |     expect.assertions(3);
+         |            ^
+      66 |     expect(exported).toBeDefined();
+      67 |
+      68 |     const randomSpy = jest.spyOn(Math, 'random').mockReturnValue(0.999);
+
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex4-pokerDiceAll.test.js:65:12)
+
+Test Suites: 1 failed, 1 total
+Tests:       2 failed, 5 passed, 7 total
+Snapshots:   0 total
+Time:        0.977 s, estimated 1 s
+Ran all test suites matching /ex4-pokerDiceAll.test.js/i.
+(node:26220) UnhandledPromiseRejectionWarning: Error: Die 1 rolled off the table.
+
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:26220) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 2)
+(node:26220) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+(node:26220) UnhandledPromiseRejectionWarning: Error: Die 2 rolled off the table.
+
+(node:26220) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 3)
+(node:26220) UnhandledPromiseRejectionWarning: Error: Die 3 rolled off the table.
+
+(node:26220) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 4)
+(node:26220) UnhandledPromiseRejectionWarning: Error: Die 4 rolled off the table.
+
+(node:26220) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 5)
+(node:26220) UnhandledPromiseRejectionWarning: Error: Die 5 rolled off the table.
+
+(node:26220) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 6)
+2022-02-05 11:01:31 info: --------------------------------------------
+2022-02-05 11:01:31 info: >>> Running Unit Test `ex4-pokerDiceAll` <<<
+2022-02-05 11:01:31 info: --------------------------------------------
+2022-02-05 11:01:35 error: *** Unit Test Error Report ***
+
+Command failed: npx jest ex4-pokerDiceAll.test.js --colors
+ FAIL  3-UsingAPIs/Week1/unit-tests/ex4-pokerDiceAll.test.js
+  ex4-pokerDiceAll
+    ✓ should exist and be executable (1 ms)
+    ✕ should have all TODO comments removed (2 ms)
+    ✓ `rollDice` should not contain unneeded console.log calls (1 ms)
+    ✓ should use `dice.map()`
+    ✓ should use `Promise.all()`
+    ✕ should resolve when all dice settle successfully (2 ms)
+    ✓ should reject with an Error when a die rolls off the table (1 ms)
+
+  ● ex4-pokerDiceAll › should have all TODO comments removed
+
+    expect(received).toBeFalsy()
+
+    Received: true
+
+      103 | function testTodosRemoved(getSource) {
+      104 |   test('should have all TODO comments removed', () => {
+    > 105 |     expect(/\bTODO\b/.test(getSource())).toBeFalsy();
+          |                                          ^
+      106 |   });
+      107 | }
+      108 |
+
+      at Object.<anonymous> (test-runner/unit-test-helpers.js:105:42)
+
+  ● ex4-pokerDiceAll › should resolve when all dice settle successfully
+
+    expect(received).toBeInstanceOf(expected)
+
+    Expected constructor: Promise
+    Received constructor: Array
+
+      52 |
+      53 |     const promise = rollDice();
+    > 54 |     expect(promise).toBeInstanceOf(Promise);
+         |                     ^
+      55 |     const result = await promise;
+      56 |     expect(Array.isArray(result)).toBe(true);
+      57 |     expect(result).toHaveLength(5);
+
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex4-pokerDiceAll.test.js:54:21)
+
+  ● ex4-pokerDiceAll › should resolve when all dice settle successfully
+
+    expect.assertions(4)
+
+    Expected four assertions to be called but received two assertion calls.
+
+      46 |
+      47 |   test('should resolve when all dice settle successfully', async () => {
+    > 48 |     expect.assertions(4);
+         |            ^
+      49 |     expect(exported).toBeDefined();
+      50 |
+      51 |     const randomSpy = jest.spyOn(Math, 'random').mockReturnValue(0);
+
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex4-pokerDiceAll.test.js:48:12)
+
+Test Suites: 1 failed, 1 total
+Tests:       2 failed, 5 passed, 7 total
+Snapshots:   0 total
+Time:        0.888 s, estimated 1 s
+Ran all test suites matching /ex4-pokerDiceAll.test.js/i.
+(node:27683) UnhandledPromiseRejectionWarning: Error: Die 1 rolled off the table.
+
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:27683) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 3)
+(node:27683) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+(node:27683) UnhandledPromiseRejectionWarning: Error: Die 2 rolled off the table.
+
+(node:27683) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 4)
+(node:27683) UnhandledPromiseRejectionWarning: Error: Die 3 rolled off the table.
+
+(node:27683) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 5)
+(node:27683) UnhandledPromiseRejectionWarning: Error: Die 4 rolled off the table.
+
+(node:27683) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 6)
+(node:27683) UnhandledPromiseRejectionWarning: Error: Die 5 rolled off the table.
+
+(node:27683) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 7)
+2022-02-05 11:01:37 error: *** ESLint Report ***
+
+ex4-pokerDiceAll.js
+  37:3  warning  Remove commented-out code  hyf/no-commented-out-code
+
+✖ 1 problem (0 errors, 1 warning)
+
+
+2022-02-05 11:03:29 info: --------------------------------------------
+2022-02-05 11:03:29 info: >>> Running Unit Test `ex4-pokerDiceAll` <<<
+2022-02-05 11:03:29 info: --------------------------------------------
+2022-02-05 11:03:32 error: *** Unit Test Error Report ***
+
+Command failed: npx jest ex4-pokerDiceAll.test.js --colors
+ FAIL  3-UsingAPIs/Week1/unit-tests/ex4-pokerDiceAll.test.js
+  ex4-pokerDiceAll
+    ✓ should exist and be executable (1 ms)
+    ✓ should have all TODO comments removed
+    ✓ `rollDice` should not contain unneeded console.log calls (1 ms)
+    ✓ should use `dice.map()` (1 ms)
+    ✓ should use `Promise.all()`
+    ✕ should resolve when all dice settle successfully (2 ms)
+    ✓ should reject with an Error when a die rolls off the table (1 ms)
+
+  ● ex4-pokerDiceAll › should resolve when all dice settle successfully
+
+    expect(received).toBeInstanceOf(expected)
+
+    Expected constructor: Promise
+    Received constructor: Array
+
+      52 |
+      53 |     const promise = rollDice();
+    > 54 |     expect(promise).toBeInstanceOf(Promise);
+         |                     ^
+      55 |     const result = await promise;
+      56 |     expect(Array.isArray(result)).toBe(true);
+      57 |     expect(result).toHaveLength(5);
+
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex4-pokerDiceAll.test.js:54:21)
+
+  ● ex4-pokerDiceAll › should resolve when all dice settle successfully
+
+    expect.assertions(4)
+
+    Expected four assertions to be called but received two assertion calls.
+
+      46 |
+      47 |   test('should resolve when all dice settle successfully', async () => {
+    > 48 |     expect.assertions(4);
+         |            ^
+      49 |     expect(exported).toBeDefined();
+      50 |
+      51 |     const randomSpy = jest.spyOn(Math, 'random').mockReturnValue(0);
+
+      at Object.<anonymous> (3-UsingAPIs/Week1/unit-tests/ex4-pokerDiceAll.test.js:48:12)
+
+Test Suites: 1 failed, 1 total
+Tests:       1 failed, 6 passed, 7 total
+Snapshots:   0 total
+Time:        0.553 s, estimated 1 s
+Ran all test suites matching /ex4-pokerDiceAll.test.js/i.
+(node:27802) UnhandledPromiseRejectionWarning: Error: Die 1 rolled off the table.
+
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:27802) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 2)
+(node:27802) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+(node:27802) UnhandledPromiseRejectionWarning: Error: Die 2 rolled off the table.
+
+(node:27802) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 3)
+(node:27802) UnhandledPromiseRejectionWarning: Error: Die 3 rolled off the table.
+
+(node:27802) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 4)
+(node:27802) UnhandledPromiseRejectionWarning: Error: Die 4 rolled off the table.
+
+(node:27802) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 5)
+(node:27802) UnhandledPromiseRejectionWarning: Error: Die 5 rolled off the table.
+
+(node:27802) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 6)
+2022-02-05 11:03:32 error: *** ESLint Report ***
+
+ex4-pokerDiceAll.js
+  36:3  warning  Remove commented-out code  hyf/no-commented-out-code
+
+✖ 1 problem (0 errors, 1 warning)
+
+
+2022-02-05 11:10:09 info: --------------------------------------------
+2022-02-05 11:10:09 info: >>> Running Unit Test `ex4-pokerDiceAll` <<<
+2022-02-05 11:10:09 info: --------------------------------------------
+2022-02-05 11:10:13 info: All unit tests passed.
+2022-02-05 11:10:16 info: All steps were completed successfully
+2022-02-05 11:12:21 info: --------------------------------------------
+2022-02-05 11:12:21 info: >>> Running Unit Test `ex4-pokerDiceAll` <<<
+2022-02-05 11:12:21 info: --------------------------------------------
+2022-02-05 11:12:23 info: All unit tests passed.
+2022-02-05 11:12:25 info: All steps were completed successfully
