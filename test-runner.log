@@ -428,3 +428,28 @@ ex4-pokerDiceAll.js
 2022-02-05 11:42:33 info: ----------------------------------------------
 2022-02-05 11:42:35 info: All unit tests passed.
 2022-02-05 11:42:36 info: All steps were completed successfully
+2022-02-05 11:46:09 info: ---------------------------------------
+2022-02-05 11:46:09 info: >>> Running Unit Test `ex1-johnWho` <<<
+2022-02-05 11:46:09 info: ---------------------------------------
+2022-02-05 11:46:12 info: All unit tests passed.
+2022-02-05 11:46:15 info: All steps were completed successfully
+2022-02-05 11:46:35 info: -------------------------------------------------
+2022-02-05 11:46:35 info: >>> Running Unit Test `ex2-checkDoubleDigits` <<<
+2022-02-05 11:46:35 info: -------------------------------------------------
+2022-02-05 11:46:36 info: All unit tests passed.
+2022-02-05 11:46:38 info: All steps were completed successfully
+2022-02-05 11:46:53 info: ---------------------------------------
+2022-02-05 11:46:53 info: >>> Running Unit Test `ex3-rollDie` <<<
+2022-02-05 11:46:53 info: ---------------------------------------
+2022-02-05 11:46:55 info: All unit tests passed.
+2022-02-05 11:46:56 info: All steps were completed successfully
+2022-02-05 11:47:07 info: --------------------------------------------
+2022-02-05 11:47:07 info: >>> Running Unit Test `ex4-pokerDiceAll` <<<
+2022-02-05 11:47:07 info: --------------------------------------------
+2022-02-05 11:47:09 info: All unit tests passed.
+2022-02-05 11:47:11 info: All steps were completed successfully
+2022-02-05 11:47:23 info: ----------------------------------------------
+2022-02-05 11:47:23 info: >>> Running Unit Test `ex5-pokerDiceChain` <<<
+2022-02-05 11:47:23 info: ----------------------------------------------
+2022-02-05 11:47:25 info: All unit tests passed.
+2022-02-05 11:47:26 info: All steps were completed successfully
