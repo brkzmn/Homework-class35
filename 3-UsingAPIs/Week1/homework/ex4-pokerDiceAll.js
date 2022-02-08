@@ -40,6 +40,9 @@ function main() {
     .catch((error) => console.log('Rejected!', error.message));
 }
 
+
+//Dice that have not finished their role continue to do so. A promise can only resolve or reject once. However, the promise's resolve or reject does not end the execution of the promise, unlike return.
+
 // ! Do not change or remove the code below
 if (process.env.NODE_ENV !== 'test') {
   main();
