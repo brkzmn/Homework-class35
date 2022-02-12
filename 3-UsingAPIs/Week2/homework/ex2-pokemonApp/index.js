@@ -39,6 +39,7 @@ function fetchData(url) {
 async function fetchAndPopulatePokemons(pokemonList) {
 
   const buttonElement = document.createElement("button");
+  buttonElement.setAttribute("type", "button");
   buttonElement.textContent = "Get Pokemon!";
   buttonElement.classList.add("pokemon-button");
   buttonElement.id = "pokeButton"
@@ -60,27 +61,33 @@ async function fetchAndPopulatePokemons(pokemonList) {
   return selectElement
 }
 
-async function fetchImage(url, pokemonImg) {
+async function fetchImage(url, pokemonImg, pokemonName) {
   const pokemonData = await fetch(url);
   const jsonPokemonData = await pokemonData.json();
-  pokemonImg.src = jsonPokemonData["sprites"]["other"]["dream_world"]["front_default"];
+  pokemonImg.src = `${jsonPokemonData["sprites"]["other"]["dream_world"]["front_default"]}`;
+  pokemonImg.alt = `image of ${pokemonName}`;
+
 }
 
 async function main() {
   try {
     let selectedPokemonUrl;
+    let pokemonName;
   
     const pokemonsArr = await fetchData("https://pokeapi.co/api/v2/pokemon?limit=151");
     const pokemonSelect = await fetchAndPopulatePokemons(pokemonsArr);
   
     const pokemonImg = document.createElement("img");
+    pokemonImg.src = "#";
+    pokemonImg.alt = "";
     document.body.appendChild(pokemonImg);
     pokemonSelect.addEventListener("change", (e) => {
       const filteredPokemon = pokemonsArr.filter((pokemon) => {
         return pokemon.name === e.target.value;
       });
       selectedPokemonUrl = filteredPokemon[0].url;
-      fetchImage(selectedPokemonUrl, pokemonImg);
+      pokemonName = filteredPokemon[0].name;
+      fetchImage(selectedPokemonUrl, pokemonImg, pokemonName);
     })
   } catch (error) {
     console.log(error);
