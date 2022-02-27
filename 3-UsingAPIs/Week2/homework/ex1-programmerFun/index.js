@@ -19,22 +19,28 @@ Full description at: https://github.com/HackYourFuture/Homework/blob/main/3-Usin
 ------------------------------------------------------------------------------*/
 function requestData(url) {
   return fetch(url)
-  .then(data => data.json())
-  .catch((error) => {
-    console.log(error);
-  })
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        throw new Error('HTTP ERROR');
+      }
+    })
+    .catch((error) => {
+      console.log(error);
+    });
 }
 
 function renderImage(data) {
-  const imageElement = document.createElement("img");
+  const imageElement = document.createElement('img');
   imageElement.src = data.img;
-  imageElement.setAttribute("alt", data.alt);
+  imageElement.setAttribute('alt', data.alt);
   document.body.appendChild(imageElement);
   console.log(data);
 }
 
 function renderError(error) {
-  const errorElement = document.createElement("h1");
+  const errorElement = document.createElement('h1');
   errorElement.textContent = error;
   document.body.appendChild(errorElement);
   console.log(error);
@@ -42,7 +48,7 @@ function renderError(error) {
 
 async function main() {
   try {
-    const data = await requestData('https://xkcd.now.sh/?comic=latest')
+    const data = await requestData('https://xkcd.now.sh/?comic=latest');
     renderImage(data);
   } catch (error) {
     renderError(error);
