@@ -44,10 +44,10 @@ function fetchAndPopulatePokemons() {
   buttonElement.setAttribute('type', 'button');
   buttonElement.textContent = 'Get Pokemon!';
   buttonElement.classList.add('pokemon-button');
-  buttonElement.id = 'pokeButton';
+  buttonElement.id = 'poke-button';
   document.body.appendChild(buttonElement);
 
-  const pokemonBtn = document.getElementById('pokeButton');
+  const pokemonBtn = document.getElementById('poke-button');
   const selectElement = document.createElement('select');
   selectElement.id = 'pokemon-select';
   selectElement.classList.add('pokemon-select');
