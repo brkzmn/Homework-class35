@@ -40,7 +40,7 @@ function fetchData(url) {
     });
 }
 
-async function fetchAndPopulatePokemons(pokemonList) {
+function fetchAndPopulatePokemons() {
   const buttonElement = document.createElement('button');
   buttonElement.setAttribute('type', 'button');
   buttonElement.textContent = 'Get Pokemon!';
@@ -50,18 +50,29 @@ async function fetchAndPopulatePokemons(pokemonList) {
 
   const pokemonBtn = document.getElementById('pokeButton');
   const selectElement = document.createElement('select');
+  selectElement.id = 'pokemon-select';
   selectElement.classList.add('pokemon-select');
   document.body.appendChild(selectElement);
-  pokemonBtn.addEventListener('click', populatePokemons);
-  function populatePokemons() {
-    pokemonList.forEach((pokemon) => {
+  pokemonBtn.addEventListener('click', () => {
+    populatePokemons();
+  });
+}
+
+async function populatePokemons() {
+  try {
+    const pokemonsArr = await fetchData(
+      'https://pokeapi.co/api/v2/pokemon?limit=151'
+    );
+    const selectElement = document.getElementById('pokemon-select');
+    pokemonsArr.forEach((pokemon, index) => {
       const pokemonOption = document.createElement('option');
       pokemonOption.textContent = pokemon.name;
-      pokemonOption.value = pokemon.name;
+      pokemonOption.value = index + 1;
       selectElement.appendChild(pokemonOption);
     });
+  } catch (error) {
+    console.log(error);
   }
-  return selectElement;
 }
 
 async function fetchImage(url, pokemonImg, pokemonName) {
@@ -71,26 +82,17 @@ async function fetchImage(url, pokemonImg, pokemonName) {
   pokemonImg.alt = `image of ${pokemonName}`;
 }
 
-async function main() {
+function main() {
   try {
-    let selectedPokemonUrl;
-    let pokemonName;
-
-    const pokemonsArr = await fetchData(
-      'https://pokeapi.co/api/v2/pokemon?limit=151'
-    );
-    const pokemonSelect = await fetchAndPopulatePokemons(pokemonsArr);
-
+    fetchAndPopulatePokemons();
     const pokemonImg = document.createElement('img');
     pokemonImg.src = '#';
     pokemonImg.alt = '';
     document.body.appendChild(pokemonImg);
+    const pokemonSelect = document.getElementById('pokemon-select');
     pokemonSelect.addEventListener('change', (e) => {
-      const filteredPokemon = pokemonsArr.filter((pokemon) => {
-        return pokemon.name === e.target.value;
-      });
-      selectedPokemonUrl = filteredPokemon[0].url;
-      pokemonName = filteredPokemon[0].name;
+      const selectedPokemonUrl = `https://pokeapi.co/api/v2/pokemon/${e.target.value}/`;
+      const pokemonName = e.target.options[e.target.selectedIndex].text;
       fetchImage(selectedPokemonUrl, pokemonImg, pokemonName);
     });
   } catch (error) {
