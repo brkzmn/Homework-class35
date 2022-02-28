@@ -24,71 +24,75 @@ parameters and return values to pass data back and forth.
 ------------------------------------------------------------------------------*/
 function fetchData(url) {
   return fetch(url)
-  .then((response) => {
-    return response.json();
-  })
-  .then((jsonData) => {
-    return jsonData.results;
-  })
-  .catch((error) => {
-    console.log(error);
-    return error;
-  });
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        throw new Error('HTTP ERROR');
+      }
+    })
+    .then((jsonData) => {
+      return jsonData.results;
+    })
+    .catch((error) => {
+      console.log(error);
+      return error;
+    });
 }
 
 async function fetchAndPopulatePokemons(pokemonList) {
-
-  const buttonElement = document.createElement("button");
-  buttonElement.setAttribute("type", "button");
-  buttonElement.textContent = "Get Pokemon!";
-  buttonElement.classList.add("pokemon-button");
-  buttonElement.id = "pokeButton"
+  const buttonElement = document.createElement('button');
+  buttonElement.setAttribute('type', 'button');
+  buttonElement.textContent = 'Get Pokemon!';
+  buttonElement.classList.add('pokemon-button');
+  buttonElement.id = 'pokeButton';
   document.body.appendChild(buttonElement);
 
-  const pokemonBtn = document.getElementById("pokeButton");
-  const selectElement = document.createElement("select");
-  selectElement.classList.add("pokemon-select");
+  const pokemonBtn = document.getElementById('pokeButton');
+  const selectElement = document.createElement('select');
+  selectElement.classList.add('pokemon-select');
   document.body.appendChild(selectElement);
-  pokemonBtn.addEventListener("click", populatePokemons);
+  pokemonBtn.addEventListener('click', populatePokemons);
   function populatePokemons() {
-      pokemonList.forEach((pokemon) => {
-        const pokemonOption = document.createElement("option");
-        pokemonOption.textContent = pokemon.name;
-        pokemonOption.value = pokemon.name
-        selectElement.appendChild(pokemonOption);
-      });
+    pokemonList.forEach((pokemon) => {
+      const pokemonOption = document.createElement('option');
+      pokemonOption.textContent = pokemon.name;
+      pokemonOption.value = pokemon.name;
+      selectElement.appendChild(pokemonOption);
+    });
   }
-  return selectElement
+  return selectElement;
 }
 
 async function fetchImage(url, pokemonImg, pokemonName) {
   const pokemonData = await fetch(url);
   const jsonPokemonData = await pokemonData.json();
-  pokemonImg.src = `${jsonPokemonData["sprites"]["other"]["dream_world"]["front_default"]}`;
+  pokemonImg.src = `${jsonPokemonData['sprites']['other']['dream_world']['front_default']}`;
   pokemonImg.alt = `image of ${pokemonName}`;
-
 }
 
 async function main() {
   try {
     let selectedPokemonUrl;
     let pokemonName;
-  
-    const pokemonsArr = await fetchData("https://pokeapi.co/api/v2/pokemon?limit=151");
+
+    const pokemonsArr = await fetchData(
+      'https://pokeapi.co/api/v2/pokemon?limit=151'
+    );
     const pokemonSelect = await fetchAndPopulatePokemons(pokemonsArr);
-  
-    const pokemonImg = document.createElement("img");
-    pokemonImg.src = "#";
-    pokemonImg.alt = "";
+
+    const pokemonImg = document.createElement('img');
+    pokemonImg.src = '#';
+    pokemonImg.alt = '';
     document.body.appendChild(pokemonImg);
-    pokemonSelect.addEventListener("change", (e) => {
+    pokemonSelect.addEventListener('change', (e) => {
       const filteredPokemon = pokemonsArr.filter((pokemon) => {
         return pokemon.name === e.target.value;
       });
       selectedPokemonUrl = filteredPokemon[0].url;
       pokemonName = filteredPokemon[0].name;
       fetchImage(selectedPokemonUrl, pokemonImg, pokemonName);
-    })
+    });
   } catch (error) {
     console.log(error);
   }
